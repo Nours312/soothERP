@@ -82,9 +82,9 @@ foreach ($liste_abonnes as $abonne) {
 	$newsletter->add_newsletter_envoi_destinataire ($id_envoi, $abonne->nom, $abonne->email);
 }
 
-if (!file_exists($DIR."config/newsletter.config.php")) {
+if (!file_exists($CONFIG_DIR."newsletter.config.php")) {
 	//vérification de l'existence du code sécurité de l'envoi de newsletter
-	if (!$file_config_newsletter = @fopen ($DIR."config/newsletter.config.php", "w")) {
+	if (!$file_config_newsletter = @fopen ($CONFIG_DIR."newsletter.config.php", "w")) {
 		$erreur = "Impossible de créer le fichier de configuration config/newsletter.config.php "; 
 	} else {
 		$file_content = "<?php

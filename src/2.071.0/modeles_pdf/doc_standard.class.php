@@ -261,7 +261,7 @@ public function pdf_content_doc_standard (&$pdf, $document) {
 				}
 			}
 		}
-		if(!empty($this->AFF_SN) && $this->AFF_SN==true ){
+		if(!empty($this->AFF_SN) && $this->AFF_SN){
 			if(isset($this->contenu[$i]->sn) && is_array($this->contenu[$i]->sn)) {
 				foreach ($this->contenu[$i]->sn as $sn_line) {
 				$line = new stdClass();

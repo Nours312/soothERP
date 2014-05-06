@@ -7,7 +7,7 @@ require ($DIR."_session.inc.php");
 
 
 if ( isset($_REQUEST["old_niveau"]) && isset($_REQUEST["new_niveau"]) ){
-    _vardump($_REQUEST);
+//    _vardump($_REQUEST);
     echo "Yeepee!";
     $id_old_niveau = $_REQUEST["old_niveau"];
     $id_new_niveau = $_REQUEST["new_niveau"];

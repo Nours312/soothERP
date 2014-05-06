@@ -633,10 +633,10 @@ function charger_total_abonnes ($id_newsletter) {
 
 //génération d'un code de sécurité pour les inscriptions et desincriptions à une newletter
 function creer_code_unique ($email, $id_newsletter) {
-	global $DIR;
-	if (!file_exists($DIR."config/newsletter.config.php")){
+    global $CONFIG_DIR ;
+	if (!file_exists($CONFIG_DIR."newsletter.config.php")){
 		//vérification de l'existence du code sécurité de l'envoi de newsletter
-		if(!$file_config_newsletter = @fopen ($DIR."config/newsletter.config.php", "w")){
+		if(!$file_config_newsletter = @fopen ($CONFIG_DIR."newsletter.config.php", "w")){
 			$erreur = "Impossible de créer le fichier de configuration config/newsletter.config.php ";
 			return false;	// L'ERREUR N'EST PAS GEREE DANS CE CODE : Trouver un moyen propre de le faire proprement
 		}else{
@@ -656,18 +656,18 @@ $file_content = "<?php
 		}
 		fclose ($file_config_newsletter);
 	}
-	require($DIR."config/newsletter.config.php");
+	require($CONFIG_DIR."newsletter.config.php");
 	$code_unique = crypt($email."_".$id_newsletter, $CODE_SECU_NEWSLETTER);
 	return $code_unique;
 }
 
 //vérification de la validité d'un code de sécurité
 function verifier_code_unique ($code_unique, $email, $id_newsletter) {
-	global $DIR;
-	if (!file_exists($DIR."config/newsletter.config.php"))
+	global $CONFIG_DIR;
+	if (!file_exists($CONFIG_DIR."newsletter.config.php"))
 	{		return false;}	// L'ERREUR N'EST PAS GEREE DANS LE CODE : Trouver un moyen propre de le faire proprement
 											// Il n'est pas nécessaire de générer le fichier car dans tous les cas, le code ne sera pas vérifié
-	require($DIR."config/newsletter.config.php");
+	require($CONFIG_DIR."newsletter.config.php");
 	$code_unique2 = crypt ($email."_".$id_newsletter, $CODE_SECU_NEWSLETTER);
 	if ($code_unique != $code_unique2)
 	{		return false;}

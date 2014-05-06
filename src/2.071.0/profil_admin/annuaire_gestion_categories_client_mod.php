@@ -35,7 +35,7 @@ contact::load_profil_class($CLIENT_ID_PROFIL);
 	$infos['cycle_relance']				= 	$_REQUEST["cycle_relance_".$_REQUEST["id_client_categ"]];
 
 	//création de la catégorie
-	_vardump($infos);
+//	_vardump($infos);
 	contact_client::maj_client_categorie ($infos);
 
 	//Mise à jour de la catégorie  par defaut

@@ -178,7 +178,7 @@ function generer_relance_client($ref_client,$id_niveau_relance,$id_edition_mode)
     $client = new contact($ref_client);
     if ( $ref_client == $client->getRef_contact()){
         $relances = get_Factures_pour_niveau_relance($id_niveau_relance,$ref_client);
-        _vardump($relances);
+//        _vardump($relances);
     }
 }
 

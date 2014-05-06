@@ -4,7 +4,7 @@
 // *************************************************************************************************************
 // FICHIERS DE CONFIGURATION
 // *************************************************************************************************************
-$CONFIG_DIR = $DIR."config/";
+//$CONFIG_DIR = is_dir($DIR."config_prod/") ? $DIR."config_prod/" : $DIR."config/";
 
 require_once ($CONFIG_DIR."config_systeme.inc.php");
 require_once ($CONFIG_DIR."config_serveur.inc.php");

@@ -23,7 +23,7 @@ $infos['cle_rib'] 			= $_REQUEST["cle_rib_".$_REQUEST["id_compte_bancaire"]];
 $infos['iban'] 					= $_REQUEST["iban_".$_REQUEST["id_compte_bancaire"]];
 $infos['swift'] 				= $_REQUEST["swift_".$_REQUEST["id_compte_bancaire"]];
 
-_vardump($infos);
+//_vardump($infos);
 	
 	
 	//modification du compte

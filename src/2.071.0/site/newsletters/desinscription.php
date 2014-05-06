@@ -7,7 +7,7 @@ $_INTERFACE['MUST_BE_LOGIN'] = 0;
 
 require ("__dir.inc.php");
 require ($DIR."_session.inc.php");
-require ($DIR."config/newsletter.config.php");
+require ($CONFIG_DIR."newsletter.config.php");
 
 ?>
 

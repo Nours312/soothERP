@@ -7,9 +7,9 @@ $_INTERFACE['MUST_BE_LOGIN'] = 0;
 
 require ("__dir.inc.php");
 
-if (!file_exists($DIR."config/newsletter.config.php")) {
+if (!file_exists($CONFIG_DIR."newsletter.config.php")) {
 	//vérification de l'existence du code sécurité de l'envoi de newsletter
-	if (!$file_config_newsletter = @fopen ($DIR."config/newsletter.config.php", "w")) {
+	if (!$file_config_newsletter = @fopen ($CONFIG_DIR."newsletter.config.php", "w")) {
 		$erreur = "Impossible de créer le fichier de configuration config/newsletter.config.php "; 
 	} else {
 		$file_content = "<?php
@@ -29,7 +29,7 @@ if (!file_exists($DIR."config/newsletter.config.php")) {
 	
 }
 require ($DIR."_session.inc.php");
-require ($DIR."config/newsletter.config.php");
+require ($CONFIG_DIR."newsletter.config.php");
 
 $liste_newletters = charger_newsletters ();
 

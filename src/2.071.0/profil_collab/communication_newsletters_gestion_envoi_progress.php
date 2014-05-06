@@ -7,7 +7,7 @@
 require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
-require ($DIR."config/newsletter.config.php");
+require ($CONFIG_DIR."newsletter.config.php");
 
 
 if (!$_SESSION['user']->check_permission ("14")) {

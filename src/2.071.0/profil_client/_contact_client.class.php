@@ -330,7 +330,7 @@ function create_infos ($infos) {
 function maj_infos ($infos) {
 	global $bdd;
 	global $COMMERCIAL_ID_PROFIL;
-        _vardump($infos);
+//        _vardump($infos);
 	if (!$this->profil_loaded) {
 		$GLOBALS['_ALERTES']['profil_non_chargé'] = 1;
 	}

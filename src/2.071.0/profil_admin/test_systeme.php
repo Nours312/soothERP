@@ -105,7 +105,7 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 			$GLOBALS['_INFOS']['test_systeme'][] = "MySQL n'est pas installé sur votre serveur.<br>";
 			break;
 		}
-		include ($DIR."config/config_bdd.inc.php");
+		include ($CONFIG_DIR."config_bdd.inc.php");
 		mysql_connect($bdd_hote, $bdd_user, $bdd_pass);
 		if (version_compare(mysql_get_server_info(), '5.0') < 0) {
 			$retour_texte .= "	Votre version de MySQL est insuffisante. <br>
@@ -127,7 +127,7 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 	
 	
 		// Test de la configuration de MySQL
-		include ($DIR."config/config_bdd.inc.php");
+		include ($CONFIG_DIR."config_bdd.inc.php");
 		try {
 			$bdd = new PDO("mysql:host=".$bdd_hote."; dbname=".$bdd_base."", $bdd_user, $bdd_pass, NULL);
 		} catch (Exception $e) {
@@ -165,7 +165,6 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 	TEST DU FONCTIONNEMENT DES MAILS<br><br>";
 	
 	// Initialisation de la variable $EMAIL_DEV pour test de mail
-	$CONFIG_DIR = $DIR."config/";
 	require_once ($CONFIG_DIR."config_serveur.inc.php");
 	global $EMAIL_DEV;
 

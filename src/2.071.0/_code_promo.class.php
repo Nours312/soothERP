@@ -190,6 +190,7 @@ function check_art_categ_code_promo_exist () {
 	global $DEFAUT_ID_TVA;
 	global $CODE_PROMO_ART_CATEG;
 	global $MODELE_SPE_CODE_PROMO;
+    global $CONFIG_DIR ;
 
 	$query = "SELECT ref_art_categ, lib_art_categ, modele, id_modele_spe, desc_art_categ, defaut_id_tva, duree_dispo, 
 										defaut_numero_compte_vente, defaut_numero_compte_achat, ref_art_categ_parent
@@ -217,7 +218,7 @@ function check_art_categ_code_promo_exist () {
 		
 		$CODE_PROMO_ART_CATEG = $art_categ->getRef_art_categ();
 		//mise à jour de la vairable systeme
-		maj_configuration_file ("config_systeme.inc.php", "maj_line", "\$CODE_PROMO_ART_CATEG =", "\$CODE_PROMO_ART_CATEG = \"".$art_categ->getRef_art_categ()."\";", $DIR."config/");
+		maj_configuration_file ("config_systeme.inc.php", "maj_line", "\$CODE_PROMO_ART_CATEG =", "\$CODE_PROMO_ART_CATEG = \"".$art_categ->getRef_art_categ()."\";", $CONFIG_DIR);
 	}
 		
 	return $CODE_PROMO_ART_CATEG;
