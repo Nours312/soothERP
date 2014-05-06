@@ -7,3 +7,5 @@ error.log.php
 
 # Sauf le fichier sql d'install d'origine
 !/src/sql*/*.sql
+
+
